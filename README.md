@@ -1,18 +1,18 @@
 ## Installation
 
-`npm install aws-sharp -S`
+`npm install aws-sharp -s`
 
 ## Features
 
- * Upload Images to AWS S3 with compressed  size with loosing Quality.
+ * Upload Images to AWS S3 with compressed  size without loosing Quality.
  * It should supported to JPG,PNG,JPEG.
  * Forced to save image into required format.
- * Provide  Image Quality Option While Compress.
+ * Provide  Image Quality Option While compressing.
 
 
 ## Synopsis
 
-### Create a client
+### Create a AWSClient
 
 ```js
 var aws_sharp = require('aws-sharp');
@@ -25,7 +25,7 @@ var AWSClient = aws_sharp.createCredentials({
 });
 ```
 
-### Upload a file to S3
+### Upload a Image to S3
 
 ```js
 const options : {
@@ -77,7 +77,7 @@ See http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-pro
 
 ## Examples
 
-### Check if a file exists in S3
+### Upload Base64 Image to S3 with compress size without loose quality
 
 
 ```js
@@ -91,7 +91,7 @@ AWSClient.uploadBase64ImageWithCompress(params).then(path=>{
 
 ## Testing
 
-if Want to test this npm need to create .env file in root folder and set following keys.
+create .env file in root folder and set following keys.
 
 `AWS_S3_KEY_ID=<valid_s3_key> AWS_S3_SECRET=<valid_s3_secret> AWS_S3_BUCKET=<valid_s3_bucket> npm test`
 
