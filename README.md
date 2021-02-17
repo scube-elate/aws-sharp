@@ -5,7 +5,7 @@
 ## Features
 
  * Upload Images to AWS S3 with compressed  size without loosing Quality.
- * It should supported to JPG,PNG,JPEG.
+ * It should supported to JPG,PNG,JPEG WEBP.
  * Forced to save image into required format.
  * Provide  Image Quality Option While compressing.
 
