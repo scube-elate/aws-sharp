@@ -29,7 +29,7 @@ var AWSClient = aws_sharp.createCredentials({
 
 ```js
 const options : {
-    fileTo:"string" // force to convert into required image format,
+    toFile:"string" // force to convert into required image format,
     quality:Number  // provide quality while compressimage, max allowed to 80
 }
 var params = {
