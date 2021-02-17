@@ -30,7 +30,7 @@ var AWSClient = aws_sharp.createCredentials({
 ```js
 const options : {
     fileTo:"string" // force to convert into required image format,
-    quality:Number  // quality while compress image max allowed to 80
+    quality:Number  // provide quality while compressimage, max allowed to 80
 }
 var params = {
     "Base64 Image",
@@ -39,8 +39,8 @@ var params = {
   },
 };
 
-AWSClient.uploadBase64ImageWithCompress(params).then(path=>{
-    console.log(path)
+AWSClient.uploadBase64ImageWithCompress(params).then(s3_path=>{
+    console.log(s3_path)
 }).catch(error=>{
     console.log(error)
 })
@@ -71,8 +71,8 @@ See http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-pro
 
  * `base64Image`: base64 image string passes as argument.
  * `bucketName`: bucket name  to the save file on particualr s3 bucket.
- *  `options` : (optional)`toFile`: Force to save to particular format ['png','jpeg','jpg','webp']   default set to `webp`
-                `quality` parameter in `sharp`, set qaulity while compress default set t0 `20` Max allowed to `80`
+ *  `options` : (optional)`toFile`: Force to save to particular format ['png','jpeg','jpg','webp']   default set to `webp`.
+ * `quality` parameter in `sharp`, set qaulity while compress default set to `20` Max allowed to `80`
 
 
 ## Examples
@@ -82,10 +82,10 @@ See http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-pro
 
 ```js
 var AWSClient = require('aws-sharp').createCredentials({ /* AWS KEYS */ });
-AWSClient.uploadBase64ImageWithCompress(params).then(path=>{
-   console.log('aws Path',path)
+AWSClient.uploadBase64ImageWithCompress(params).then(s3_path=>{
+   console.log('S3_Path',s3_path)
 }).catch(error=>{
-    console.log("Error": error)
+    console.log("Error", error)
 })
 ```
 
