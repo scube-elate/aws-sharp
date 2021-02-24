@@ -1,6 +1,6 @@
 {
   "name": "aws-sharp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This contains a reference to the aws-sdk and sharp module. It is a valid use case to use",
   "main": "index.js",
   "scripts": {
